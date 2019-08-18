@@ -1,0 +1,13 @@
+#cloud-config
+package_upgrade: true
+packages:
+ - httpd
+runcmd:
+ -  touch /tmp/cloudconfig.test
+users:
+  - name: khushal
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCllek719X8VJSvzC+f0CtRUu1sllqWJfyoogjH0p/WSdajgXNM4W9rIJIx0frUMaFBAsE7WnyxbQXJNaJvPpfdq9RLFQIBdaN1lM3fEKrAntDNsxiq95bREPtba4nVA4YXBiaqwe9Un8qdDHWz73B/aMyiQ2H87/hCHASKuEdItcK9nVkW4Z1I1TnL7MOu5sTliVLQBAEW5GlEOh8akZ6WZS5ZONMcGzc1OmO0Ey3w85M9bnVgdXnd3XVJquDM8Pa8p5RFKOvmqCpwKBwPpHXBKR1PAUt42Fw0FzYdj6F1enZPJnT1HI4aNw0zpJdsGZw0m94RE4lbA936qYGwpqIjSVPFcDkstNioG6GOxdaygKxwBMgE8J7kCnBLXdhArWAbb+KWC6TvXs1+mfstYScyX1Qw1XyoESzfAc9tnrO/YusQsa5YIdKGnTPD8I5N8kaUtNPVqU9M0iskX3lxEGx7AEWiRi2XQX5O3gHMjASm4Ow1dvdNUB/1AW0xrTt6qteqRGkDAHDUG1+2eRyhnddUxG/PIMwW1ta94jJKiPR5X2EAP1l/pyeZiAYAWdl+3uKOqPKYYPsO3zE8VXotVupGypoYrze+Skbxiv+BPxodP709aSAvMUeboCiVxwNCp67VkR1RpKgRaIDDL9EwG2TIA82zccaykiD59j8UqVhGcw==
